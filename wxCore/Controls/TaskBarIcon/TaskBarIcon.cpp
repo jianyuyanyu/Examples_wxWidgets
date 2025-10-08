@@ -36,7 +36,7 @@ namespace TaskBarIconExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame {nullptr, wxID_ANY, "TaskBarIcon example"} {
-      taskBarIcon.SetIcon(wxBitmap {GammasoftIcon});
+      taskBarIcon.SetIcon(wxBitmapBundle::FromBitmap(wxBitmap {GammasoftIcon}));
       taskBarIcon.Bind(wxEVT_TASKBAR_LEFT_DCLICK, [&](wxTaskBarIconEvent& event) {
         Show(!IsShown());
       });
